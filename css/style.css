@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital@0;1&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Public Sans", sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+body {
+    font-size: 18px;
+    text-align: center;
+}
+
+.contenido {
+
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px
+}
+
+.titulo {
+    margin: 50px;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.form-control,
+.form-select {
+    max-width: 300px;
+    margin: auto;
+}
+
+#resultado {
+    margin-top: 20px;
+}
+

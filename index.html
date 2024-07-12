@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Divisas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/miarchivo.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <img src="./assets/Logo Nebulosa.png" alt="logo" width="100px">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./index.html">Nebulosa Exchange and Investments</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="https://dbermudezlugo.github.io/nebulosaecolodge/">Nebulosa EcoLodge</a>
+              </li>
+            </ul>
+            <div data-bs-theme="dark">
+              <div class="form-check form-switch mx-4">
+                <input
+                  class="form-check-input p-2"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckChecked"
+                  checked
+                  onclick="myFunction()"
+                />
+              </div>
+          </div>
+        </div>
+      </nav>
+    <section class="contenido">
+      <!-- Conversor de Divisas - 1 seccion -->
+
+    <div class="container mt-5">
+        <h1 class="titulo">Conversor de Divisas</h1>
+        <form class="formulario" id="formulario">
+            <div class="mb-3">
+                <label for="divisa" class="form-label">Selecciona divisa a enviar:</label>
+                <select class="form-select" id="divisa">
+                    <option value="USD">US$ - Dólar Estadounidense</option>
+                    <option value="GBP">GBP - Libra Esterlina</option>
+                    <option value="EUR">EUR - Euro</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="valorCOP" class="form-label">Selecciona monto en COP</label>
+                <input type="text" class="form-control" id="valorCOP" placeholder="Numero en miles de pesos">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="convertir()">Convertir</button>
+        </form>
+        <div id="resultado"></div>
+    </div>
+
+    <!-- Calculadora de Inversion y grafico - 2 seccion -->
+    <div class="container mt-5">
+        <h2 class="titulo">Proyeccion de inversion</h2>
+        <form class="formulario" id="formularioInversion">
+            <div class="mb-3">
+                <label for="inversionDivisa" class="form-label">Selecciona divisa para invertir:</label>
+                <select class="form-select" id="inversionDivisa">
+                    <option value="USD">US$ - Dólar Estadounidense</option>
+                    <option value="GBP">GBP - Libra Esterlina</option>
+                    <option value="EUR">EUR - Euro</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="inversionCOP" class="form-label">Selecciona monto en COP para invertir</label>
+                <input type="text" class="form-control" id="inversionCOP" placeholder="Numero en miles de pesos">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="calcularInversion()">Calcular Inversión</button>
+        </form>
+        <div class="resultado-inversion mt-3">
+            <div id="resultadoInversion"></div>
+            <canvas id="graficoInversion" style="max-width: 70%; margin: auto;"></canvas>
+        </div>
+    </div>
+    </section>
+
+    <!-- Footer -->
+
+
+    <footer class="bg-body-secondary text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Nebulosa Exchange and Investments</h5>
+                    <p>
+                        "Para nuestros clientes con vision extranjera"
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Pagina Principal</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="https://dbermudezlugo.github.io/nebulosaecolodge/" class="text-dark"><img src="./assets/Logo Nebulosa.png" alt="logo" width="100px"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text">© 2024 Nebulosa EcoLodge</h5>
+                    <ul class="list-unstyled">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
